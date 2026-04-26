@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!--
+        a태그 : 어떤 링크/대상 으로 이동하는 태그
+        
+        href 속성 :이동할 경로
+        target 속성 : 어떻게 띄울건지
+            blank : 새창
+            _self : 현재 창
+            -->
+
+    <a href="https://www.naver.com" target="_self" title="네이버로 이동">네이버이동 </a>
+    <br>
+    <a href="https://www.google.com" target="_blank" title="구글로 이동">구글이동</a>
+    <br>
+        <!-- title 속성 : 마우스를 올렸을 때 표시될 텍스트 -->
+    <a href="tag03.html" target="_self" >tag03.html로이동</a>
+    <a href="./tag03.html" target="_self" >tag03.html로이동</a>
+    <a href="../start.html" target="_self" >start.html로이동</a>
+    <!-- ./ : 현재 폴더(경로)를 의미
+        ../ : 상위 폴더(경로)를 의미
+    -->
+    <a href="../quiz/quiz01.html" target="_self" >quiz01.html로이동</a>
+    <!-- ../quiz/quiz01.html : 
+     상위 폴더의 quiz 폴더 내의 quiz01.html 파일로 이동 -->
+
+     <!--이미지태그 이미지표시 img
+     
+     src 속성 : 표시할 이미지의 경로 -->
+
+        <img src="img001.jpg" alt="간장사진"> <!--현재파일과 동일경로-->
+        <img src="./img001.jpg" alt="간장사진"> <!--현재파일과 동일경로-->
+        <img src="./img/img002.jpg" alt="블루베리사진"><!--하위 폴더 경로 -->
+        
+        <br><br>
+        <img src="../../images/img001.jpg" alt="간장사진">
+        <img src="../../images/img002.jpg" alt="블루베리">
+        <!--상위 다른 폴더 경로-->
+
+
+        <!--외부이미지 링크주소를 통해서 연결-->
+        <img src="https://static.coupangcdn.com/ia/cmg_paperboy/image/1775020276076/C3-PC.png" alt="풍선">
+        <img src="https://thumbnail5.coupangcdn.com/thumbnails/remote/160x160ex/image/retail/images/19847623766382-97e12bcc-a6a4-403a-9ec1-3b508af61a9b.jpg" alt="모자">
+        
+        <!--이미지 태그를 a태그로 감싸기-->
+        <!--이미지 클릭 시 외부 링크로 이동-->
+        <a href="https://www.coupang.com/vp/products/9167183735?itemId=26841264890&vendorItemId=93811177569&sourceType=srp_product_ads&clickEventId=040d24a0-412d-11f1-910c-56b982121109&from=home_CategoryBest_ranking&traid=home_CategoryBest_ranking" target="_blank">
+            <img src="https://thumbnail5.coupangcdn.com/thumbnails/remote/160x160ex/image/retail/images/19847623766382-97e12bcc-a6a4-403a-9ec1-3b508af61a9b.jpg" alt="모자">
+            </a>
+
+        <br><br>
+
+
+</body>
+</html>
