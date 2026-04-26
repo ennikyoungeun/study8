@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <!--label 태그 활용-->
+        치즈크러스트추가<input type="checkbox">
+        크러스트 추가<input type="checkbox">
+        새우 추가<input type="checkbox">
+
+        <!--암묵적인 방법/ 글자를 눌러도 체크박스가 선택됨 -->
+        <label>치즈크러스트추가<input type="checkbox"></label>
+        <label>크러스트 추가<input type="checkbox"></label>
+        <label>새우 추가<input type="checkbox"></label>
+
+        <!--명시적인 방법
+        label for 속성 input id속성
+        -->
+
+        <label for="cheese">치즈크러스트추가</label> <input type="checkbox" id="cheese">
+        <label for="crust">크러스트 추가</label>  <input type="checkbox" id="crust">
+        <label for="shrimp">새우 추가</label> <input type="checkbox" id="shrimp">
+
+        <br><br>
+        <fieldset>
+            <label>대<input type="radio" name="size"></label>
+            <label>중<input type="radio" name="size"></label>
+            <label>소<input type="radio" name="size"></label>
+        </fieldset>
+
+        <br><br>
+
+        <fieldset>
+            <legend>족발사이즈</legend>
+            <label>대<input type="radio" name="size"></label>
+            <label>중<input type="radio" name="size"></label>
+            <label>소<input type="radio" name="size"></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>블로그 글쓰기</legend>
+            <label>제목<input type="text" value="초기값"></label>
+            내용
+            <textarea>콘텐츠가있는태그</textarea>
+            <!--textarea는 밸류없이 작성-->
+            <textarea readonly>콘텐츠가있는태그</textarea>
+            <!--readonly사용자 입력을 막아줌-->
+            
+            
+        </fieldset>
+
+</body>
+</html>
