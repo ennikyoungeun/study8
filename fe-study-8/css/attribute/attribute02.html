@@ -1,32 +1,103 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <style> /* font 속성 */
-        .font-attr1 {
-            font-family: 'Times New Roman', serif;
-            font-size: 20px;
-            font-variant: small-caps; 
-            /* 대문자만표시 소문자를 작은대문자 글씨로 표기 */
-            color: darkblue;}
-
-        .font-attr2 {
-            /* font-weight : 글씨 굵기 , bold=700*/
-            font-weight: bold;
-            font-style: italic; /* oblique*/}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
 
 
-    </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gugi&family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+
+<style>
+.font-attr1 {
+font-family: 'Times New Roman', Times, serif;
+font-size: 30px;
+font-variant: small-caps;
+color:darkblue;
+letter-spacing: 10px; /* 자간 */
+line-height: 50px; /* 행간 */
+}
+
+.font-attr2 {
+/* 700 bold */
+font-weight: 700;
+font-style: italic;
+/*
+italic : 이탤릭체
+oblique : 기울임
+*/
+}
+
+
+.font-box {
+/* 정렬 */
+text-align: center;
+
+font-size: 24px;
+}
+
+
+.gugi-regular {
+font-family: "Gugi", sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+
+.nanum-gothic-regular {
+font-family: "Nanum Gothic", sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+
+.inbox1 {
+    /* em 부모요소의 크기대비*/
+    font-size: 2em;
+}
+
+.inbox2 {
+    /* rem 상태크기 */
+    /*HTML 크기대비*/
+    /* 1em = 16px */
+    font-size: 2rem;/*16px * 2 = 32px*/
+}
+
+</style>
 </head>
 <body>
-    
-    <p>기본 텍스트</p>
 
-    <p class="font-attr1"> Font attr1</p>
-    <p class="font-attr2"> Font attr2 글씨속성</p>
+<p>기본 텍스트 Font attr1</p>
+<p class="font-attr1">Font attr1</p>
+<p class="font-attr2">Font attr2 글씨 속성</p>
+
+<i>Font attr</i>
+
+
+<div class="font-box">
+    <p class="gugi-regular">font box 글자 1111</p>
+    <p class="inbox1">font box 글자 2222</p>
+    <p p class="inbox2">font box 글자 3333</p>
+</div>
+
+
+<div class="font-box2">
+    <p class="gugi-regular">font box 글자 1111</p>
+    <p class="inbox1">font box 글자 2222</p>
+    <p class="inbox2">font box 글자 3333</p>
+</div>
+
+<p>
+오늘의 특가
+<del>5,000원</del>
+<ins>3,000원</ins>
+</p>
+<p>
+오늘의 특가
+<span style="text-decoration: line-through;">5,000원</span>
+<span style="text-decoration: underline;">3,000원</span>
+</p>
 
 </body>
 </html>
