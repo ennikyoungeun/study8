@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<hea>
+    
+    <h1>CSS basic</h1>
+    <!--내부스타일 시트 방식-->
+    <style>
+        /* heaq 태그 내부, style 태그 내부에 작성하는 css코드 */
+        /*css코드 작성영역*/
+        h1 { color: red; }
+
+        h3 { color: purple; }
+
+    </style>
+
+<!--외부스타일 시트 방식-->
+<!-- 외부스타일 시트 방식은 css코드를 별도의 파일로 작성하여 html문서에서 불러오는 방식-->
+ <link rel="stylesheet" href="basic.css">
+
+</head>
+</body>
+
+<body>
+
+    <!--인라인 스타일 방식-->
+    <h1>css basic</h1>
+    <!--인라인 스타일이 내부스타일보다 더 영향이 큼-->
+    <h1 style="color: blue;">css basic</h1>
+    <h1>css basic</h1>
+
+    <h2 style="color: darkcyan;">css h2 tag</h2>
+
+<!--내부 스타일 시트vs 외부스타일시트는 마지막에 적용한 스타일, 적용순서기준-->
+
+    <h3>css h3 tag</h3>
+
+    <h4>css h4 tag</h4>
+
+</html>
