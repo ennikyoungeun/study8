@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+        /*전체 선택자-> 모든 요소에 기본세팅 적용 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /*박스모델에 사이즈 저자시, border 까지 사이즈로 인식*/
+
+        /*
+        display 속성
+        none        : 요소를 화면에서 제거, 공간도 제거
+        block       : 요소를 블록으로 표시(한줄차지), 줄바꿈 발생
+        inine       : 콘텐츠 만큼 차지 (사이즈적용불가),같은줄옆에 나란히 배치, 여백적용가능(좌우만)
+        inline-block: 자체적으로는 block처럼 작용
+                        외부적으로는 inline처럼 작용 (다른 요소와 상호작용 -> 같은줄옆에 나란히배치)
+        */
+
+        .box1 {
+            /* div 태그 기본성격 block*/
+
+            width: 200px;
+            height: 100px;
+            border: 1px solid black; 
+
+            margin: 10px;
+            padding: 10px;
+
+            /*display: block inline inline-block */
+            display: none; 
+        }
+
+        .box2 {
+            width: 200px;
+            height: 100px;
+            border: 1px solid black; 
+
+            display: block;
+
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .box3 {
+            width: 200px;
+            height: 100px;
+            border: 1px solid black; 
+            /*display: inline;*/
+            display: inline-block;
+
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .span1  {
+            width: 200px;
+            height: 100px;
+            display: inline
+        } 
+
+        .parent {
+            width: 200px;
+            height: 100px;
+            border: 1px solid blue;
+        }
+
+        .child {width: 100px;
+            height: 50px;
+            border: 1px solid red;
+
+            display: none;
+        }
+
+        .parent:hover .child {
+             display: block;
+        }
+
+        .parent:hover .parent-span {
+            color: blue;
+            text-decoration: underline;
+        }
+        </style>
+
+
+</head>
+<body>
+
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+
+
+    <span class="span1">span1</span>
+    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum totam, quidem, quasi iusto quos vitae ipsam nulla ducimus reiciendis sunt id. Quibusdam voluptas cupiditate laboriosam, repellendus recusandae illum amet deleniti.</span>
+
+    <div class="parent">
+        <span class="parent-span">부모</span>
+        <br><br>
+
+        <div class="child">
+            자식
+        </div>
+
+    </div>
+
+</body>
+</html>
