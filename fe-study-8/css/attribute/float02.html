@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+
+        .black-box {
+            border: 2px solid black;
+            display: inline-block; 
+            /*인라인 블록으로 정렬을 옆으로 옮김 */
+        }
+
+        .red-box {
+            background-color: red;
+            float: left;
+        }
+
+        .green-box {
+            background-color: green;
+            float: left;
+        }
+
+        .blue-box {
+            background-color: blue;
+            float: left;
+        }
+        .next {
+            background-color: gray;
+        }
+        /* 
+            float 효과 공간.위치인식이 안될때 해결방법 
+            1. 그 크기만큼 임의의 요소 추가-공간차지하는 용도
+            2. clear 속성활용
+                1)float가 적용된 요소들중 마지막 요소 
+                    /다음 float적용하지않을 요소에 적용
+                2)가상요소 선택자 활용 clear
+            */
+        .clear-box {
+            clear: both;
+        }
+
+        .container::after {
+            content:"";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <br> 엔터, &nbsp;띄어쓰기 -->
+    <div class="box black-box"></div>
+    <div class="box black-box"></div>
+    <div class="box black-box"></div>
+
+    <!-- 엔터 없이 (태그들 사이에 공간을 X) 태그들을 한줄로 이어 작성하면 블럭사이 띄어쓰기 공간없어짐 -->    
+    <div class="box black-box"></div><div class="box black-box"></div><div class="box black-box"></div>
+
+    <div class="box black-box">
+    </div><div class="box black-box">
+    </div><div class="box black-box"></div>
+
+    <div class="container">
+        <div class="box red-box"></div>
+        <div class="box green-box"></div>
+        <div class="box blue-box"></div>
+
+    </div>
+    
+    
+    <!-- 공간차지용 요소 -->
+    <!-- <div class="box"></div> -->
+    <div class="box next"></div>
+    <!-- 별도의 clear 용 요소활용 -->
+    <!-- <div class="clear-box"></div> -->
+
+
+    <!-- 부모요소의 크기
+         고정된 사이즈 부여- 고정된사이즈
+         고정된 사이즈X - 자식이 차지하는 만큼-부모의 사이즈
+         -고정된 사이즈인데 자식에 해당하는 컨텐츠 요소가 더길어 넘져 흐르면?
+         -overflow 속성적용
+            scroll : 부모요소에 스크롤 적용
+            hidden : 넘쳐 흐르는 부분을 숨김 -->
+
+    <div style="background-color: lightblue; height:300px;">
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quos quia eaque fuga consequatur beatae ipsum suscipit libero laboriosam et assumenda quibusdam nam vitae praesentium illum, quisquam molestiae omnis. Neque.</span>
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quos quia eaque fuga consequatur beatae ipsum suscipit libero laboriosam et assumenda quibusdam nam vitae praesentium illum, quisquam molestiae omnis. Neque.</span>
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quos quia eaque fuga consequatur beatae ipsum suscipit libero laboriosam et assumenda quibusdam nam vitae praesentium illum, quisquam molestiae omnis. Neque.</span>
+    </div>
+
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quos quia eaque fuga consequatur beatae ipsum suscipit libero laboriosam et assumenda quibusdam nam vitae praesentium illum, quisquam molestiae omnis. Neque.
+    </div>
+</body>
+</html>
