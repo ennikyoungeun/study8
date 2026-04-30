@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin: 20px;
+            
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            
+        }
+
+        .box:hover {
+            animation-play-state: paused;
+        }
+
+        .box1{
+            animation-name: moveX;
+        }
+        .box2{
+            animation-name: moveY;
+        }
+        .box3{
+            animation-name: moveXY;
+        }
+
+        @keyframes moveX {
+            0%{transform: translateX(0);
+                background-color: blue;}
+            50%{background-color: orange;}
+            100%{transform: translateX(200px);
+                background-color: pink;}
+        }
+
+        @keyframes moveY {
+            0%{transform: translateY(0);
+                background-color: blue;}
+            50%{background-color: orange;}
+            100%{transform: translateY(200px);
+                background-color: pink;}
+        }
+
+        @keyframes moveXY {
+            0%{transform: translate(0,0);
+                background-color: blue;}
+            50%{background-color: orange;}
+            100%{transform: translate(200px,200px);
+                background-color: pink;}
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+</body>
+</html>
