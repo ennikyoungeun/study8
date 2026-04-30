@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .item {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+        .container {
+            display: flex;
+            /* flex-direction: column-reverse;  (아래->위) */
+            flex-direction: row; 
+            flex-wrap: wrap;
+
+            /* 주축에 대한 정렬들 */
+            justify-content: center; /* 주축 방향의 시작점기준으로 정렬*/
+            justify-content: space-around; /*flex 아이템의 둘레가 균일*/
+            justify-content: space-between; /* flex 아이템 사이의 간격이 균일하도록 정렬*/
+            justify-content: space-evenly; /* flex 아이템사이의 양끝의 간격이 균일하도록 정렬*/
+            /* 교차축에 대한 정렬들 */
+            align-items: baseline;   /*flex 아이템의 baseline을 기준으로 정렬 */
+            align-items:flex-start ; /* 교차축 방향의 시작을 기준으로 정렬*/
+            align-items: flex-end;  /* 교차축 방향의 끝을 기준으로 정렬*/
+            align-items: stretch; /* 교차축 뱡향으로 플렉스의 아이템 너비나 높이가 늘어남*/
+            align-items: center;  /* 교차축 방향의 중앙을 기준으로 정렬함 */
+            /* align-content: center; */
+            height: 400px;
+            background-color: lightblue;
+            
+        }
+/*align-content 속성도 플렉스 아이템을 교차축으로 정렬할때 사용하나 align-item속성과 다르게
+플렉스 아이템이 flex-wrap속성때문에 두줄이상이 됐을때만 사용함*/
+        .content-center {
+            /* margin: 0 auto; */
+
+            /* text-align: center;
+            padding-top: 36px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item content-center">5</div>
+        <div class="item">6</div>
+        <!-- <div class="item" style="align-self: flex-end;">6</div> -->
+        <!-- 셀프로 혼자 따로지정됨,box6 -->
+    </div>
+
+</body>
+</html>
