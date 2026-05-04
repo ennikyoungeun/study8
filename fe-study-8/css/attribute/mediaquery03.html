@@ -4,32 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <style>
-
+    
         .container {
             display: flex;
-            /* flex-direction: row; / flex 기본값*/
+            flex-direction: row;
         }
-        .box {
+
+        .box{
             width: 250px;
             height: 250px;
         }
 
-        .red {background: red;}
+        .red {background-color: red;}
         .blue {background-color: blue;}
 
-        @media screen and(max-width:480) {
-            .comtainer {
-                flex-direction: columns;} /* 조건에 걸리면 블럭처럼 정렬로하는 입력*/
-            .box {width: 100%;
+
+        
+        @media screen and (max-width:480px) {
+            
+            .container {
+                flex-direction: column;
+            }
+
+            .box {
+                width: 100%;
             }
         }
+
     </style>
 </head>
 <body>
     
-
     <div class="container">
         <div class="box red"></div>
         <div class="box blue"></div>
