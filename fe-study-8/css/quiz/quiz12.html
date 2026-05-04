@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: white; 
+        }
+
+
+        #wrap {
+            width: 700px;
+            margin: 50px auto ;
+        }
+
+
+        header, main, footer, aside, .nav-side {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+
+        #header {
+            height: 100px;
+            display: flex;
+        }
+        .nav-side {
+            width: 25%; 
+            background-color:red; 
+            height: 100%;
+            color: white;
+        }
+
+            
+
+        .nav-empty {
+            width: 55%; 
+            background-color: white;
+        }
+
+
+        #container {
+            height: 300px;
+            display: flex;
+        }
+
+        #content {
+            width: 490px;
+            height: 100%;
+            background-color: orange; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 20px 0;
+        }
+
+        .box-row {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+
+        .black-box {
+            width: 100px;
+            height: 50px;
+            background-color: black;
+            transition: transform 0.3s; 
+        }
+
+
+        .black-box:hover {
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+
+        #aside {
+            width: 210px; 
+            height: 100%;
+            background-color: green; 
+            color: white;
+        }
+
+
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: blue; 
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+        
+        <header id="header">
+            <div class="nav-side">메인메뉴</div>
+            <div class="nav-empty"></div>
+            <div class="nav-side">마이페이지</div>
+        </header>
+
+        
+        <main id="container">
+            
+            <section id="content">
+                <div class="box-row">
+                    <div class="black-box"></div>
+                    <div class="black-box"></div>
+                    <div class="black-box"></div>
+                </div>
+                <div class="box-row">
+                    <div class="black-box"></div>
+                    <div class="black-box"></div>
+                    <div class="black-box"></div>
+                </div>
+            </section>
+            
+            <aside id="aside">aside</aside>
+        </main>
+
+        
+        <footer id="footer">footer</footer>
+    </div>
+
+</body>
+</html>
