@@ -3,94 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    
+    <title>Document</title>
+
     <style>
-        /* 기본 스타일 및 색상 정의 */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.container {
-    display: grid;
-    gap: 2px;
-    margin: 0 auto;
-    border: 1px solid #000;
-    background-color: #000; /* 경계선을 표현하기 위한 배경 */
-}
+        .container {
+            width: 800px;
+            margin: 0 auto;
+        }
 
-.item { height: 60px; border: 1px solid #333; }
+        .header { 
+            display: flex; 
+        }
 
-.yellow1, .yellow2, .yellow3, .yellow4 { background-color: yellow; }
-.gray { background-color: #a9a9a9; }
-.purple { background-color: #6a2c91; }
-.light-blue { background-color: #b0c4de; }
-.orange1 { background-color: #ffb380; }
-.orange2 { background-color: #ffa500; }
-.green { background-color: #90ee90; }
+        .header-left {
+            width:400px;
+            height:100px;
+            background-color: yellow;
+        }
 
-/* 1. 800px 이상 (고정 및 가운데 정렬) */
-@media (min-width: 801px) {
-    .container {
-        width: 800px;
-        grid-template-columns: repeat(4, 1fr);
-    }
-    .yellow1 { grid-column: span 2; }
-    .gray { grid-column: span 2; }
-    .purple { grid-column: span 4; }
-    .light-blue { grid-column: span 1.5; grid-row: span 2; height: 122px; }
-    .yellow2 { grid-column: span 2.5; }
-    .orange1 { grid-column: span 2.5; }
-    /* 하단 4칸 */
-    .yellow3, .yellow4, .orange2, .green { grid-column: span 1; }
-}
+        .header-right {
+            width:400px;
+            height:100px;
+            background-color: gray;
+        }
 
-/* 2. 700px ~ 800px (가로 꽉 차게) */
-@media (max-width: 800px) and (min-width: 651px) {
-    .container { width: 100%; grid-template-columns: repeat(4, 1fr); }
-    .yellow1, .gray { grid-column: span 2; }
-    .purple { grid-column: span 4; }
-    .light-blue { grid-column: span 1.5; grid-row: span 2; height: 122px; }
-    .yellow2, .orange1 { grid-column: span 2.5; }
-    .yellow3, .yellow4, .orange2, .green { grid-column: span 1; }
-}
+        .nav {
+            width:100%;
+            height: 100px;
+            background-color: purple;
+        }
 
-/* 3. 650px (레이아웃 변형) */
-@media (max-width: 650px) and (min-width: 501px) {
-    .container { grid-template-columns: repeat(2, 1fr); }
-    .yellow1, .gray { grid-column: span 1; }
-    .purple { grid-column: span 2; }
-    .light-blue { grid-row: span 2; height: 122px; }
-    .yellow2, .orange1 { grid-column: span 1; }
-    .yellow3, .yellow4, .orange2, .green { grid-column: span 1; }
-    /* 마지막 두 칸은 아래로 */
-    .orange2, .green { grid-column: span 1; }
-}
+        .main-left {
+            width:40%;
+            height:200px;
+            background-color: lightblue;
+        }
 
-/* 4. 500px (2열 배치) */
-@media (max-width: 500px) and (min-width: 351px) {
-    .container { grid-template-columns: repeat(2, 1fr); }
-    .yellow1, .gray, .purple, .light-blue { grid-column: span 2; }
-    .yellow2, .orange1, .yellow3, .orange2, .yellow4, .green { grid-column: span 1; }
-}
+        .main-right {
+            width:60%;
+            /* height:200px; */
+            background-color: antiquewhite;
+        }
 
-/* 5. 350px (전체 1열 세로 배치) */
-@media (max-width: 350px) {
-    .container { grid-template-columns: 1fr; }
-    .item { grid-column: span 1; }
-}
+        .main {
+            display: flex;
+        }
+
+        .main-right-1 {
+            height: 100px;
+            background-color: coral;
+        }
+
+        .main-right-2 {
+            height: 100px;
+            background-color: lawngreen;
+        }
+
+        .footer-1 {
+            width:25%;
+            height:100px;
+            background-color: yellow;
+        }
+
+        .footer-2 {
+            width:25%;
+            height:100px;
+            background-color: orange;
+        }
+
+        .footer-3 {
+            width:25%;
+            height:100px;
+            background-color: aquamarine;
+        }
+
+        .footer-4 {
+            width:25%;
+            height:100px;
+            background-color: cadetblue;
+        }
+
+        .footer {
+            display: flex;
+        }
+
+
+        @media screen and (max-width:700px) {
+            .container { width: 100%; }
+        }
+
+        @media screen and (max-width:650px) {
+            .footer-1, .footer-2, .footer-3, .footer-4 {
+                width: 50%;
+            }
+
+            .footer {
+                flex-wrap: wrap;  /*줄바꿈*/
+            }
+        }
+
+        @media screen and (max-width:500px) {
+            .header {
+                flex-direction: column;
+            }
+
+            .header-left, .header-right {
+                width: 100%;
+            }
+
+            .main {
+                flex-direction: column;
+            }
+
+            .main-left {
+                width: 100%;
+                height: 100px;
+            }
+
+            .main-right {
+                display: flex;
+                width:100%;
+            }
+
+            .main-right-1, .main-right-2 {
+                width: 50%;
+            }
+
+        }
+
+        @media screen and (max-width:350px) {
+            .main-right {
+                flex-direction: column;
+            }
+
+            .main-right-1, .main-right-2 {
+                width: 100%;
+            }
+
+            .footer-1, .footer-2, .footer-3, .footer-4 {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <div class="item yellow1"></div>
-        <div class="item gray"></div>
-        <div class="item purple"></div>
-        <div class="item light-blue"></div>
-        <div class="item yellow2"></div>
-        <div class="item orange1"></div>
-        <div class="item yellow3"></div>
-        <div class="item yellow4"></div>
-        <div class="item orange2"></div>
-        <div class="item green"></div>
+
+        <div class="header">
+            <div class="header-left"></div>
+            <div class="header-right"></div>
+        </div>
+
+        <div class="nav"></div>
+
+        <div class="main">
+            <div class="main-left"></div>
+            <div class="main-right">
+                <div class="main-right-1"></div>
+                <div class="main-right-2"></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-1"></div>
+            <div class="footer-2"></div>
+            <div class="footer-3"></div>
+            <div class="footer-4"></div>
+        </div>
+
+        
     </div>
+
+
 </body>
 </html>
