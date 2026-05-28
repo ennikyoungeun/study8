@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Malgun Gothic', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container{
+            background-color: #243238;
+            width: 380px;
+            padding: 30px;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-sizing: border-box;
+        }
+
+        .tab-group{
+            display: flex;
+            margin-bottom: 30px;
+            background-color: rgba(255,255,255,0.05);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .tab{
+            flex: 1;
+            text-align: center;
+            padding: 12px 0;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .tab.inactive{
+            color: #718188;
+            background-color: transparent;
+        }
+        .tab.active{
+            color: #fff;
+            background-color: #1ab188;
+        }
+        h1 {
+            color: #fff;
+            text-align: center;
+            font-weight: 300;
+            margin: 0 0 30px 0;
+            font-size: 24px;
+        }
+        .input-field {
+           margin-bottom: 20px;
+        }
+        .input-field input {
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            border:1px solid #718188;
+            color: #fff;
+            font-size: 16px;
+            box-sizing: border-box;
+            outline: none;
+        }
+        .input-field input:placeholder {
+            border-color: #1ab188;
+        }
+        .input-field input::placeholder {
+            color: #718188;
+        }
+        .input-field input:focus {
+            border-color: #1ab188;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: #1ab188;
+            color: #ffffff;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #159b76;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+    
+        <div class="tab-group">
+            <a href="답안지2-2.html" class="tab inactive">Sign Up</a>
+            <a href="#" class="tab active">Log In</a>
+        </div>
+
+        <h1>Welcome Back!</h1>
+
+        <form>
+            <div class="input-field">
+                <input type="email" placeholder="Email Address *" required>
+            </div>
+            <div class="input-field">
+                <input type="password" placeholder="Password *" required>
+            </div>
+            <button type="submit" class="submit-btn">LOG IN</button>
+        </form>
+    </div>
+
+</body>
+</html>
