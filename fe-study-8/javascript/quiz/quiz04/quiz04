@@ -1,0 +1,32 @@
+const personInfo = {
+name:"홍길동",
+age:25,
+phone:"010-1234-5678",
+engName:"John Smith",
+nickname:" 복습마왕 "
+}
+
+console.log('변경 전');
+console.log(personInfo);
+
+personInfo.engName = /* 코딩부분 */personInfo.engName.toUpperCase();
+//<-대문자로변경,소문자로 변경->toLowerCase()
+
+personInfo.nickname = /* 코딩부분 */personInfo.nickname.trim();
+//공백지우기->test.trim(), 앞에있는공백만 지우기->trimStart(),뒤에만->trimEnd();
+//가운데 공백은 지워지지 않음.
+//글자 앞과 뒤에서 제거 되는 것들->스페이스,\t,\n,\r,기타유니코드 공백문자
+
+personInfo.phone = /* 코딩부분 */personInfo.phone.split("-");
+//split(매개변수)매개변수 문자 기준으로 자르기
+
+console.log('변경 후');
+console.log(personInfo);
+
+
+//자른 배열중 1번 인데스 뽑기는?
+console.log(personInfo.phone[1]);
+
+// 만약 split() 결과를 별도 변수에 저장했다면:
+// const split = personInfo.phone.split("-");
+// console.log(split[1]); // 1234
