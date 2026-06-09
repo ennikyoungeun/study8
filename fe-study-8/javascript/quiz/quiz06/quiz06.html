@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <p>달식당 <span onclick="increaseCnt()">좋아요❤</span> <span id="cnt">0</span>  </p>
+
+    <script>
+
+
+        const cnt = document.getElementById('cnt');
+
+        let count = 0;
+
+        //좋아요를 눌렀을때 함수 실행 
+        function increaseCnt(){
+            
+            /*
+            //변수 활용
+            count++;  //1 2 3 4 .... 
+            //count = count + 1;
+            //옆에 보이는 숫자값(카운트)을 증가시켜서 세팅한다
+            cnt.textContent = count;
+            */
+
+            //요소의 textContent 접근해서 활용  Number() 숫자 변환
+
+            //console.log(cnt.textContent);
+
+            //문자로 인식  -> 숫자로 인식 + 1
+            // String()  Number()
+
+            cnt.textContent = Number(cnt.textContent) + 1;
+
+        }
+
+
+    </script>
+</body>
+</html>
