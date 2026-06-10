@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+</head>
+<body>
+
+<form id="loginForm">
+    <input type="text" id="loginId" placeholder="아이디"><br>
+    <input type="password" id="loginPw" placeholder="비밀번호"><br>
+    <button type="submit" id="btnLogin">로그인 시도</button><br>
+</form>
+
+<script>
+const loginForm = document.getElementById("loginForm");
+const loginId = document.getElementById("loginId");
+const loginPw = document.getElementById("loginPw");
+
+// 로그인 처리
+function tryLogin() {
+    const id = loginId.value.trim();
+    const pw = loginPw.value.trim();
+
+    // Option 2
+    if (id === "") {
+        alert("아이디를 입력해주세요.");
+        loginId.focus();
+        return;
+    }
+
+    if (pw === "") {
+        alert("비밀번호를 입력해주세요.");
+        loginPw.focus();
+        return;
+    }
+
+    // 로그인 진행
+    alert("로그인 시도");
+
+    // 입력값 제거
+    loginId.value = "";
+    loginPw.value = "";
+
+    loginId.focus();
+}
+
+// form submit 방지 및 로그인 처리
+loginForm.addEventListener("submit", function(e) {
+    e.preventDefault(); // form 기본 submit 방지
+    tryLogin();
+});
+
+// 아이디 입력칸
+loginId.addEventListener("keydown", function(e) {
+    console.log("아이디 입력칸:", e.key);
+
+    if (e.key === "Enter") {
+        e.preventDefault();
+        loginPw.focus();
+    }
+});
+
+// 비밀번호 입력칸
+loginPw.addEventListener("keydown", function(e) {
+    console.log("비밀번호 입력칸:", e.key);
+
+    if (e.key === "Enter") {
+        e.preventDefault();
+        tryLogin();
+    }
+});
+</script>
+
+</body>
+</html>
