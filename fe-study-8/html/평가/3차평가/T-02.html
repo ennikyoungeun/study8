@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>상품 등록</title>
+</head>
+<body>
+    <h2>상품 등록</h2>
+    
+    <!-- 시나리오 (2): 데이터 입력 폼 -->
+    <form onsubmit="return saveProduct(event)">
+        <p>카테고리: 
+            <select required>
+                <option value="전자기기">전자기기</option>
+                <option value="사무용품">사무용품</option>
+            </select>
+        </p>
+        <p>상품명: <input type="text" id="pName" required></p>
+        <p>단가: <input type="number" id="pPrice" required></p>
+        <p>재고: <input type="number" id="pStock" required></p>
+        
+        <!-- 시나리오 (3): 저장 및 페이지 전환 -->
+        <button type="button" onclick="location.href='getBoardList.html'">취소</button>
+        <button type="submit">상품 저장</button>
+    </form>
+    <script>
+    function saveProduct(event) {
+        event.preventDefault();
+        
+        // 간단한 유효성 검사 구색
+        if(document.getElementById('pPrice').value <= 0) {
+            alert("올바른 단가를 입력하세요.");
+            return false;
+        }
+        alert("등록 완료!");
+        location.href = 'getBoard.html'; // 상세화면으로 이동
+    }
+    </script>
+</body>
+</html>

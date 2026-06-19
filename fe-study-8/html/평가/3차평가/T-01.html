@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>상품 목록</title>
+</head>
+<body>
+    <h2>상품 목록</h2>
+    <!-- 시나리오 (1): 등록 페이지 이동 버튼 -->
+    <button onclick="location.href='insertBoard.html'">신규 상품 등록</button>
+    <br><br>
+    
+    <table border="1" style="width:100%; border-collapse:collapse; text-align:center;">
+        <tr>
+            <th>상품코드</th>
+            <th>카테고리</th>
+            <th>상품명</th>
+            <th>단가</th>
+            <th>재고</th>
+        </tr>
+        <!-- 시나리오 (5): 임의의 리스트 클릭 시 상세화면 이동 -->
+        <tr onclick="location.href='getBoard.html'" style="cursor:pointer;">
+            <td>P003</td>
+            <td>전자기기</td>
+            <td>기계식 키보드</td>
+            <td>89,000원</td>
+            <td>50개</td>
+        </tr>
+        <tr onclick="location.href='getBoard.html'" style="cursor:pointer;">
+            <td>P002</td>
+            <td>사무용품</td>
+            <td>무선 마우스</td>
+            <td>25,000원</td>
+            <td>3개</td>
+        </tr>
+    </table>
+</body>
+</html>
